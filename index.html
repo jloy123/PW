@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Intent Roleplay Simulator | Spot the Trick</title>
+    <title>Safety Star | Online Safety Hero</title>
     <style>
         * {
             box-sizing: border-box;
         }
 
         body {
-            background: #1a4c6e;
+            background: #1E5F7A;
             font-family: 'Segoe UI', 'Comic Neue', 'Comic Sans MS', 'Roboto', sans-serif;
             display: flex;
             justify-content: center;
@@ -23,34 +23,34 @@
         .game-container {
             max-width: 950px;
             width: 100%;
-            background: #fef9e6;
-            border-radius: 48px;
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
+            background: #FFFBF0;
+            border-radius: 56px;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            border: 4px solid #ffb347;
+            border: 5px solid #F4C542;
         }
 
         .game-header {
-            background: #ffb347;
-            padding: 20px 25px 15px 25px;
+            background: #F4C542;
+            padding: 18px 25px 12px 25px;
             text-align: center;
-            border-bottom: 4px solid #e67e22;
+            border-bottom: 5px solid #E67E22;
         }
 
         .game-header h1 {
             margin: 0;
             font-size: 1.9rem;
-            color: #2c3e50;
+            color: #1E3B4F;
             font-weight: 800;
         }
 
         .game-header p {
             font-size: 1rem;
-            background: #2c3e50;
+            background: #1E3B4F;
             display: inline-block;
             padding: 5px 18px;
             border-radius: 40px;
-            color: #ffb347;
+            color: #F4C542;
             margin-top: 10px;
             font-weight: bold;
         }
@@ -60,130 +60,131 @@
         }
 
         .npc-area {
-            background: #e6f2f5;
-            border-radius: 40px;
+            background: #E9F3F8;
+            border-radius: 48px;
             padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: inset 0 0 0 2px white, 0 6px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 0 3px white, 0 8px 15px rgba(0, 0, 0, 0.05);
         }
 
         .npc-name {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
+            gap: 12px;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #1a5d7a;
-            margin-bottom: 12px;
+            color: #1E5A7A;
+            margin-bottom: 10px;
         }
 
         .npc-name span {
-            background: #ffb347;
+            background: #F4C542;
             border-radius: 50px;
             padding: 4px 14px;
-            font-size: 1rem;
-            color: #2c3e50;
+            font-size: 0.85rem;
+            color: #2C3E50;
         }
 
         .npc-speech {
             background: white;
             border-radius: 40px;
             padding: 18px 22px;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            color: #1f3a4b;
-            border-left: 12px solid #e67e22;
+            color: #1F3A4B;
+            border-left: 14px solid #E67E22;
             word-break: break-word;
             line-height: 1.4;
         }
 
         .intent-box {
-            background: #ffefdb;
+            background: #FFF2E0;
             border-radius: 32px;
-            padding: 16px 20px;
+            padding: 16px 22px;
             margin-bottom: 25px;
-            border-left: 10px solid #e67e22;
+            border-left: 10px solid #E67E22;
         }
 
         .intent-title {
             font-weight: bold;
-            font-size: 1.1rem;
-            color: #b45f1b;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #C45C1A;
+            margin-bottom: 8px;
         }
 
         .intent-text {
             font-size: 1rem;
             line-height: 1.45;
             color: #2d3e40;
-            background: #fff7e8;
-            padding: 12px 16px;
+            background: #FFFCF5;
+            padding: 12px 18px;
             border-radius: 28px;
         }
 
         .choices-area {
-            margin: 20px 0 15px;
+            margin: 15px 0 15px;
         }
 
         .choices-label {
             font-weight: bold;
-            font-size: 1.1rem;
-            color: #2c5f8a;
+            font-size: 1.2rem;
+            color: #2C5F8A;
             margin-bottom: 12px;
         }
 
         .buttons-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
+            gap: 12px;
             justify-content: center;
         }
 
         .game-btn {
-            background: #ffb347;
+            background: #F4C542;
             border: none;
             font-size: 0.95rem;
             font-weight: bold;
-            padding: 12px 16px;
+            padding: 12px 14px;
             border-radius: 60px;
-            color: #2c3e50;
+            color: #2C3E50;
             cursor: pointer;
-            transition: 0.1s linear;
-            box-shadow: 0 4px 0 #b4621a;
+            transition: 0.05s linear;
+            box-shadow: 0 4px 0 #B7621A;
             font-family: inherit;
             flex: 1 0 auto;
             min-width: 140px;
+            text-align: center;
         }
 
         .game-btn:active {
             transform: translateY(2px);
-            box-shadow: 0 1px 0 #b4621a;
+            box-shadow: 0 1px 0 #B7621A;
         }
 
         .game-btn.correct-style {
-            background: #2e8b57;
+            background: #2E8B57;
             color: white;
-            box-shadow: 0 4px 0 #1e5a3a;
+            box-shadow: 0 4px 0 #1E5A3A;
         }
 
         .game-btn.wrong-style {
-            background: #cd5c5c;
+            background: #CD5C5C;
             color: white;
-            box-shadow: 0 4px 0 #8b3a3a;
+            box-shadow: 0 4px 0 #8B3A3A;
         }
 
         .reset-btn {
             background: #577590;
             color: white;
-            box-shadow: 0 4px 0 #2f4858;
+            box-shadow: 0 4px 0 #2F4858;
             margin-top: 15px;
             width: 100%;
         }
 
         .next-btn {
-            background: #2e8b57;
+            background: #2E8B57;
             color: white;
-            box-shadow: 0 4px 0 #1e5a3a;
+            box-shadow: 0 4px 0 #1E5A3A;
             margin-top: 12px;
             width: 100%;
             display: none;
@@ -191,33 +192,40 @@
 
         .feedback {
             text-align: center;
-            margin-top: 18px;
+            margin-top: 20px;
             font-weight: bold;
-            background: #fdf4dc;
+            background: #FDF4DC;
             border-radius: 50px;
-            padding: 10px;
+            padding: 12px 14px;
             font-size: 0.95rem;
-            color: #2d6a4f;
+            color: #2D6A4F;
+            border: 1px solid #F4C542;
         }
 
         .score-area {
             display: flex;
             justify-content: space-between;
-            background: #fdf4dc;
-            padding: 10px 20px;
+            background: #FFF1DF;
+            padding: 10px 22px;
             border-radius: 60px;
             margin-bottom: 20px;
             font-weight: bold;
-            font-size: 1rem;
-            color: #1e6091;
+            font-size: 1.1rem;
+            color: #1E6091;
+            border: 1px solid #F4C542;
+        }
+
+        /* Hide the question number span completely */
+        .question-number {
+            display: none;
         }
 
         @media (max-width: 650px) {
             .game-content {
-                padding: 18px;
+                padding: 16px;
             }
             .npc-speech {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .buttons-grid {
                 flex-direction: column;
@@ -231,231 +239,266 @@
 <body>
 <div class="game-container">
     <div class="game-header">
-        <h1>Intent Roleplay Simulator</h1>
-        <p>Learn to see the hidden motive</p>
+        <h1>Safety Star</h1>
+        <p>Learn to be safe online</p>
     </div>
     <div class="game-content">
         <div class="score-area">
-            <span>Score: <span id="scoreValue">0</span></span>
-            <span>Encounter <span id="roundNum">1</span> / 10</span>
+            <span>Points: <span id="scoreValue">0</span></span>
+            <!-- Question number removed from top right corner -->
         </div>
 
         <div class="npc-area">
             <div class="npc-name">
-                Whiskers the Fox <span>(NPC)</span>
+                Helper Bear <span>(friend)</span>
             </div>
             <div class="npc-speech" id="npcMessage">
-                "Hello! Would you like a free super rare coin?"
+                "Let's learn online safety!"
             </div>
         </div>
 
         <div class="intent-box" id="intentBox">
             <div class="intent-title">
-                What is really happening?
+                What is the SAFEST thing to do?
             </div>
             <div class="intent-text" id="intentText">
-                Choose an answer first, then the hidden motive will be explained.
+                Read the situation. Pick the best answer. Then we will explain why.
             </div>
         </div>
 
         <div class="choices-area">
             <div class="choices-label">
-                Your choice:
+                Pick one:
             </div>
             <div class="buttons-grid" id="choicesContainer">
-                <!-- dynamic options will be injected here -->
+                <!-- options will be added here -->
             </div>
         </div>
 
-        <button class="reset-btn" id="resetGameBtn">Play Again / Reset</button>
-        <button class="next-btn" id="nextRoundBtn">Next Encounter</button>
+        <button class="reset-btn" id="resetGameBtn">Play Again</button>
+        <button class="next-btn" id="nextRoundBtn">Next Question</button>
         <div class="feedback" id="feedbackMsg">
-            Read the NPC's words. Choose the safe option to learn and earn points.
+            Read each question. Choose the safest answer.
         </div>
     </div>
 </div>
 
 <script>
-    // 10 scenarios with 4 diverse options each.
-    // correctAnswerIndex points to the safe choice (0 to 3)
-    // Some scenarios have "Yes" or positive action as correct answer when it's actually safe (like telling an adult, confirming with friend)
-    const scenarios = [
+    // 10 online safety questions - short, clear, no emojis
+    const questions = [
         {
-            npcLine: "You won a free video game! Just tell me your home address and I will mail it today.",
+            text: "A game asks for your real name and address to send you a prize. What do you do?",
             options: [
-                "Say no and keep my address private",
-                "Give my address because I want the game",
-                "Ask a parent first before answering",
-                "Ignore the message and close the chat"
+                "Give the info to get the prize",
+                "Ask a parent first",
+                "Type a fake name",
+                "Ignore it but keep playing"
             ],
-            correctAnswerIndex: 0,  // say no
-            intentExplanation: "This is a trick to get your private address. Real prizes never ask for personal information like your home address. The safest choices are saying no, ignoring, or asking an adult. Giving your address is dangerous.",
-            outcomeCorrect: "Good choice! You kept your address private or asked an adult. That is always the safest thing to do.",
-            outcomeWrong: "Sharing your address with a stranger can be unsafe. Real contests do not ask for private details. Next time, say no or ask a parent."
+            correctIndex: 1,
+            explanation: "Always ask a parent before sharing real name or address online. Strangers do not need that info.",
+            correctMsg: "Great job! Asking a parent keeps you safe.",
+            wrongMsgs: {
+                0: "Giving your real address to a game could be a trick. Ask a parent first.",
+                2: "Lying is not the best choice. It is better to ask a parent for help.",
+                3: "Ignoring is okay, but telling a parent is even safer."
+            }
         },
         {
-            npcLine: "I am feeling very sad and alone. Could you please help me by sharing your password? I promise it will help me trust you.",
+            text: "Someone you don't know sends you a friend request. What is safest?",
             options: [
-                "Say yes and share my password to be nice",
-                "Say no, passwords are private",
-                "Tell an adult about this message",
-                "Ask why they need my password first"
+                "Accept, more friends = more fun",
+                "Accept but block them later",
+                "Decline and tell a parent",
+                "Ask them questions first"
             ],
-            correctAnswerIndex: 1,  // say no
-            intentExplanation: "This is an emotional trick. Scammers pretend to be sad to make you feel guilty. They want to steal your password. Real friends never ask for passwords.",
-            outcomeCorrect: "Excellent! You kept your password safe. Never share passwords with anyone except a trusted adult at home.",
-            outcomeWrong: "Giving your password means the scammer can take over your account. Always say no and tell an adult."
+            correctIndex: 2,
+            explanation: "Only accept friend requests from people you know in real life. Strangers can be dangerous.",
+            correctMsg: "Perfect! Only add real friends. Tell a parent about strangers.",
+            wrongMsgs: {
+                0: "Adding strangers is risky. They might not be who they say they are.",
+                1: "Accepting then blocking is still risky. Best to just decline and tell a parent.",
+                3: "Asking questions is not safe. Strangers can lie. Decline and tell an adult."
+            }
         },
         {
-            npcLine: "Your friend Sam told me you owe them 10 dollars for lunch. Can you send me the money right now through this link?",
+            text: "Your online friend asks for your password to 'help' you. What do you say?",
             options: [
-                "Send the money immediately to be a good friend",
-                "Say yes, but only send half first",
-                "Say no and call Sam to check if it's true",
-                "Ignore the message and block the person"
+                "Sure, here is my password",
+                "No, passwords are secret",
+                "Only give half the password",
+                "Ask what they need it for"
             ],
-            correctAnswerIndex: 2,  // check with friend - this is safe AND involves a 'yes' action to verify
-            intentExplanation: "Scammers pretend to know your friends to pressure you. Always check with your real friend directly before sending anything. The safe choice is to verify first.",
-            outcomeCorrect: "Perfect! You checked with your friend first. That stops the scam. Real friends won't pressure you through strangers.",
-            outcomeWrong: "Sending money without checking is risky. Scammers lie to create panic. Always slow down and ask the actual person."
+            correctIndex: 1,
+            explanation: "Never share your password with anyone except your parents. Real friends don't ask for passwords.",
+            correctMsg: "Excellent! Keep passwords secret. That protects your account.",
+            wrongMsgs: {
+                0: "Never share your password. That person could lock you out of your account.",
+                2: "Giving any part of your password is unsafe. Just say NO.",
+                3: "Asking why is okay, but still do not share. The safest answer is NO."
+            }
         },
         {
-            npcLine: "Click this amazing link! It says you get a free tablet. Just enter your phone number and the tablet is yours.",
+            text: "You see something online that makes you feel scared or sad. What should you do?",
             options: [
-                "Click the link and enter my number",
-                "Ask my parent to look at the link first",
-                "Share the link with my friends so they can get one too",
-                "Type my number but not my full name"
+                "Keep watching alone",
+                "Tell a parent or teacher",
+                "Send it to a friend",
+                "Close it and forget"
             ],
-            correctAnswerIndex: 1,  // ask parent
-            intentExplanation: "The link could be fake or dangerous. They want your phone number to send scam messages. Never click unknown links without an adult.",
-            outcomeCorrect: "Smart move! You asked a parent. Unknown links can be traps. You stayed safe by getting help.",
-            outcomeWrong: "That link might be a trick to steal information. Always check with a grown-up before clicking or sharing."
+            correctIndex: 1,
+            explanation: "Always tell a trusted adult when something online bothers you. They can help you feel better.",
+            correctMsg: "So smart! Telling an adult is always the right choice.",
+            wrongMsgs: {
+                0: "Watching alone can make you feel worse. Tell an adult right away.",
+                2: "Sending to a friend might scare them too. Tell a parent instead.",
+                3: "Closing it is good, but telling an adult is even better so they can help."
+            }
         },
         {
-            npcLine: "I am from official tech support. Your computer has a virus. Let me control your screen to fix it right now.",
+            text: "A stranger messages you saying, 'You are so cool! Send me a picture of yourself.' What is safest?",
             options: [
-                "Let them control my computer to fix the virus",
-                "Say yes but watch what they do carefully",
-                "Say no and hang up, then tell a parent",
-                "Give them my computer password so they can log in later"
+                "Send a picture to be nice",
+                "Say no and block them",
+                "Send a picture of my pet",
+                "Ask why they want it"
             ],
-            correctAnswerIndex: 2,  // say no and tell parent
-            intentExplanation: "Fake tech support tries to scare you. They want to control your computer and steal information. Real tech support does not call you suddenly.",
-            outcomeCorrect: "Excellent! You did not let a stranger control your computer. Telling a parent is the safest choice.",
-            outcomeWrong: "Letting a stranger control your computer is very dangerous. They can steal your files. Always say no and ask an adult."
+            correctIndex: 1,
+            explanation: "Never send photos to strangers. Block them and tell a parent. Real friends don't ask for pictures.",
+            correctMsg: "Perfect! Block strangers who ask for photos. You stayed safe!",
+            wrongMsgs: {
+                0: "Never send your photo to a stranger. They could use it badly.",
+                2: "Even a pet photo is not safe with a stranger. Just say no and block.",
+                3: "Do not talk to strangers online. Block and tell a parent."
+            }
         },
         {
-            npcLine: "I have a secret surprise for you! But you must promise not to tell your parents. Can you keep a secret from them?",
+            text: "You play games for 3 hours and feel tired. What is the best choice?",
             options: [
-                "Promise to keep the secret",
-                "Say yes but only if the surprise is small",
-                "Say no and tell my parents about this message",
-                "Ask what the surprise is first"
+                "Keep playing all night",
+                "Take a break and rest",
+                "Play one more hour",
+                "Get snacks and keep going"
             ],
-            correctAnswerIndex: 2,  // tell parents
-            intentExplanation: "Scammers tell you to keep secrets from parents so adults cannot protect you. This is a danger sign. Safe people never ask you to hide things from your family.",
-            outcomeCorrect: "Great job! Telling your parents is always the right choice. Keeping secrets from adults about online messages is unsafe.",
-            outcomeWrong: "Never keep secrets from your parents about what strangers say. That is how scammers trick kids. Always tell a grown-up."
+            correctIndex: 1,
+            explanation: "Taking breaks is healthy for your eyes, body, and brain. Balance is important for online safety too.",
+            correctMsg: "Great job! Taking breaks keeps you healthy and happy.",
+            wrongMsgs: {
+                0: "Playing too much can make you tired and sick. Take breaks.",
+                1: "One more hour still means no break. Rest your eyes and body.",
+                3: "Snacks do not fix tiredness. Take a real break from screens."
+            }
         },
         {
-            npcLine: "You can be a famous video maker! Just send me a photo of yourself and your school name to join our talent group.",
+            text: "Someone online says mean things to you. What should you do?",
             options: [
-                "Send the photo and school name to join",
-                "Say yes but blur my face in the photo",
-                "Say no and block the person",
-                "Ask my parent first before sharing anything"
+                "Say mean things back",
+                "Cry and say nothing",
+                "Tell a parent and block them",
+                "Ignore and keep talking"
             ],
-            correctAnswerIndex: 3,  // ask parent first
-            intentExplanation: "Scammers ask for personal photos and school information to find you in real life. Real talent groups use official websites and parent permission.",
-            outcomeCorrect: "Wise choice! You protected your personal information by asking a parent. Strangers do not need those details.",
-            outcomeWrong: "Sharing photos and school name can help a scammer find you. It is best to keep that private and talk to an adult."
+            correctIndex: 2,
+            explanation: "Tell a parent right away when someone is mean. Block them. You don't have to face it alone.",
+            correctMsg: "You did the bravest thing! Telling a parent stops the meanness.",
+            wrongMsgs: {
+                0: "Being mean back makes things worse. Tell an adult instead.",
+                1: "Crying alone is sad. You deserve help. Tell a parent.",
+                3: "Ignoring is okay, but telling a parent is safer. They can help stop it."
+            }
         },
         {
-            npcLine: "I found your lost pet! But I need 20 dollars to bring it back. Send the money to this account right away.",
+            text: "A website asks for your phone number to 'verify your age.' What is safest?",
             options: [
-                "Pay the money to get my pet back quickly",
-                "Ask for a photo of my pet first to make sure",
-                "Say yes but only pay half now",
-                "Tell my parents and let them handle it"
+                "Type my real number",
+                "Type a fake number",
+                "Ask a parent first",
+                "Close the website"
             ],
-            correctAnswerIndex: 3,  // tell parents
-            intentExplanation: "Scammers pretend to have something you love to make you pay. Always check with an adult first. Real helpers don't demand money without proof.",
-            outcomeCorrect: "Perfect! You told your parents. They can help check if it's real. Scammers want you to act fast without thinking.",
-            outcomeWrong: "Paying without proof is risky. Always ask an adult for help when someone asks for money like this."
+            correctIndex: 2,
+            explanation: "Never give your phone number online without a parent. Some websites collect numbers to call or text you.",
+            correctMsg: "Smart choice! Parents help decide what is safe to share.",
+            wrongMsgs: {
+                0: "Do not give your real number to websites. They might call or text you with tricks.",
+                1: "Lying is not the best. Just ask a parent before sharing anything.",
+                3: "Closing is fine, but telling a parent is even better so they know."
+            }
         },
         {
-            npcLine: "Help! I forgot my wallet. Can you give me your credit card number just for a minute? I will return it, I promise.",
+            text: "You want to make a strong password. Which one is safest?",
             options: [
-                "Give the credit card number to help",
-                "Say no, credit card numbers are private",
-                "Ask for their ID first to check",
-                "Tell a parent about this request"
+                "123456",
+                "password",
+                "MyName2024",
+                "Tiger9Lemon7"
             ],
-            correctAnswerIndex: 1,  // say no
-            intentExplanation: "Credit card numbers are private. No stranger should ever ask for them. The scammer will use the number to buy things and you will lose money.",
-            outcomeCorrect: "Great! You never share credit card numbers. That protects your family's money and safety. Saying no is strong and smart.",
-            outcomeWrong: "Giving a credit card number to a stranger is never safe. They will not return it. Always say no and tell a parent."
+            correctIndex: 3,
+            explanation: "A strong password has letters, numbers, and symbols. It is hard for others to guess. Keep it secret.",
+            correctMsg: "Excellent! That is a super strong password. You are a password pro.",
+            wrongMsgs: {
+                0: "123456 is too easy to guess. Scammers can break in fast.",
+                1: "'password' is the most common weak password. Pick something harder.",
+                2: "Using your name is easy to guess. Add numbers and symbols to make it strong."
+            }
         },
         {
-            npcLine: "Your teacher gave me permission to collect homework answers. Can you say yes and share your answers with me so we can both get good grades?",
+            text: "A friend shares a secret about another kid online. What should you do?",
             options: [
-                "Say yes and share my answers to be helpful",
-                "Say no, that would be cheating",
-                "Ask my teacher first if this is real",
-                "Ignore the message completely"
+                "Share it with more people",
+                "Keep the secret forever",
+                "Tell a trusted adult",
+                "Ask the friend to stop"
             ],
-            correctAnswerIndex: 2,  // ask teacher first (this is a safe "yes" to verification)
-            intentExplanation: "Scammers pretend to have authority. Real teachers don't ask students to share answers like this. Always check directly with your teacher.",
-            outcomeCorrect: "Excellent! You asked your teacher first. That is the honest and safe way. Scammers lie about permissions.",
-            outcomeWrong: "Sharing answers without checking can lead to trouble. Always verify with a trusted adult or teacher before believing someone."
+            correctIndex: 2,
+            explanation: "If a secret could hurt someone, tell an adult. Some secrets are not safe to keep, especially online.",
+            correctMsg: "You are a good friend! Telling an adult helps everyone stay safe.",
+            wrongMsgs: {
+                0: "Sharing secrets online can hurt feelings. Tell an adult instead.",
+                1: "Some secrets are not safe to keep. If someone could get hurt, tell an adult.",
+                3: "Asking to stop is good, but telling an adult is even safer."
+            }
         }
     ];
 
-    let currentRound = 0;
+    let currentQ = 0;
     let score = 0;
     let gameActive = true;
-    let roundAnswered = false;
+    let questionAnswered = false;
     let nextButton = document.getElementById("nextRoundBtn");
     const npcMessageEl = document.getElementById("npcMessage");
     const intentTextEl = document.getElementById("intentText");
     const scoreSpan = document.getElementById("scoreValue");
-    const roundNumSpan = document.getElementById("roundNum");
     const feedbackMsgEl = document.getElementById("feedbackMsg");
     const choicesContainer = document.getElementById("choicesContainer");
     const resetBtn = document.getElementById("resetGameBtn");
 
     function renderOptions() {
-        const scenario = scenarios[currentRound];
+        const q = questions[currentQ];
         choicesContainer.innerHTML = "";
-        scenario.options.forEach((option, idx) => {
+        q.options.forEach((option, idx) => {
             const btn = document.createElement("button");
             btn.textContent = option;
             btn.className = "game-btn";
-            // add style class based on whether it's correct later, but we just attach event
             btn.dataset.index = idx;
             btn.addEventListener("click", () => onChoice(idx));
             choicesContainer.appendChild(btn);
         });
     }
 
-    function updateUIForCurrentRound() {
+    function updateUIForCurrent() {
         if (!gameActive) {
-            npcMessageEl.innerHTML = "GAME COMPLETE! You finished all 10 encounters.";
-            intentTextEl.innerHTML = `Final score: ${score} out of ${scenarios.length}. You learned to spot hidden motives like fake prizes, emotional tricks, and pressure scams. Always trust your safety rules!`;
-            choicesContainer.innerHTML = "<div style='text-align:center; padding:15px;'>Game finished. Press Play Again.</div>";
+            npcMessageEl.innerHTML = "Congratulations! You finished all 10 safety questions.";
+            intentTextEl.innerHTML = "Final score: " + score + " out of " + questions.length + ". You are a Safety Star! Keep using what you learned.";
+            choicesContainer.innerHTML = "<div style='text-align:center; padding:15px; background:#FFF2DF; border-radius:40px;'>Game complete. Press Play Again to practice more.</div>";
             nextButton.style.display = "none";
             return;
         }
 
-        const scenario = scenarios[currentRound];
-        npcMessageEl.innerHTML = `"${scenario.npcLine}"`;
-        intentTextEl.innerHTML = "Choose an answer first. Then we will explain the hidden motive.";
-        roundAnswered = false;
+        const q = questions[currentQ];
+        npcMessageEl.innerHTML = q.text;
+        intentTextEl.innerHTML = "Choose the SAFEST answer. Then we will explain why it is safe.";
+        questionAnswered = false;
         nextButton.style.display = "none";
-        roundNumSpan.innerText = `${currentRound+1} / ${scenarios.length}`;
         scoreSpan.innerText = score;
-        feedbackMsgEl.innerHTML = "Read carefully. Each situation has one safest choice.";
+        feedbackMsgEl.innerHTML = "Read carefully. Pick the best answer to earn points.";
         
         renderOptions();
     }
@@ -469,8 +512,8 @@
 
     function highlightCorrectAndWrong(selectedIndex, isCorrect) {
         const btns = document.querySelectorAll("#choicesContainer .game-btn");
-        const scenario = scenarios[currentRound];
-        const correctIdx = scenario.correctAnswerIndex;
+        const q = questions[currentQ];
+        const correctIdx = q.correctIndex;
         
         btns.forEach((btn, idx) => {
             if (idx === correctIdx) {
@@ -482,85 +525,80 @@
     }
 
     function onChoice(selectedIdx) {
-        if (!gameActive || roundAnswered) return;
+        if (!gameActive || questionAnswered) return;
         
-        const scenario = scenarios[currentRound];
-        const isCorrect = (selectedIdx === scenario.correctAnswerIndex);
+        const q = questions[currentQ];
+        const isCorrect = (selectedIdx === q.correctIndex);
         let outcomeMsg = "";
         
         if (isCorrect) {
             score++;
-            outcomeMsg = scenario.outcomeCorrect;
-            feedbackMsgEl.innerHTML = outcomeMsg + " +1 point!";
+            outcomeMsg = q.correctMsg;
+            feedbackMsgEl.innerHTML = "CORRECT: " + outcomeMsg + " +1 point!";
         } else {
-            outcomeMsg = scenario.outcomeWrong;
-            feedbackMsgEl.innerHTML = outcomeMsg + " You can learn from this and try a different choice next time.";
+            const wrongMsg = q.wrongMsgs[selectedIdx];
+            outcomeMsg = wrongMsg || "That is not the safest choice. Let's learn the safe way.";
+            feedbackMsgEl.innerHTML = "NOT QUITE: " + outcomeMsg;
         }
         
         scoreSpan.innerText = score;
-        intentTextEl.innerHTML = `Hidden motive: ${scenario.intentExplanation}`;
+        intentTextEl.innerHTML = "SAFETY RULE: " + q.explanation;
         
-        roundAnswered = true;
+        questionAnswered = true;
         disableChoiceButtons(true);
         
-        // Highlight correct answer and wrong if needed
         highlightCorrectAndWrong(selectedIdx, isCorrect);
         
-        if (currentRound + 1 === scenarios.length) {
-            nextButton.innerText = "Finish Game";
+        if (currentQ + 1 === questions.length) {
+            nextButton.innerText = "Finish";
             nextButton.style.display = "block";
         } else {
-            nextButton.innerText = "Next Encounter";
+            nextButton.innerText = "Next Question";
             nextButton.style.display = "block";
         }
     }
     
-    function goToNextRound() {
+    function goToNext() {
         if (!gameActive) return;
-        if (!roundAnswered) {
-            feedbackMsgEl.innerHTML = "Please choose an answer first before moving to the next encounter.";
+        if (!questionAnswered) {
+            feedbackMsgEl.innerHTML = "Please choose an answer first, then press Next Question.";
             return;
         }
         
-        if (currentRound + 1 < scenarios.length) {
-            currentRound++;
-            updateUIForCurrentRound();
+        if (currentQ + 1 < questions.length) {
+            currentQ++;
+            updateUIForCurrent();
         } 
-        else if (currentRound + 1 === scenarios.length) {
+        else if (currentQ + 1 === questions.length) {
             gameActive = false;
-            npcMessageEl.innerHTML = "CONGRATULATIONS! You completed all 10 tricky encounters.";
-            intentTextEl.innerHTML = `Final score: ${score} out of ${scenarios.length}. You learned to spot hidden motives like fake prizes, emotional tricks, and pressure scams. Always trust your safety rules!`;
-            choicesContainer.innerHTML = "<div style='text-align:center; padding:15px;'>Game completed. Press Play Again to practice more.</div>";
+            npcMessageEl.innerHTML = "You did it! You learned how to stay safe online.";
+            intentTextEl.innerHTML = "Final Score: " + score + " out of " + questions.length + ". You are a Safety Star! Remember: ask parents, keep passwords secret, and be kind.";
+            choicesContainer.innerHTML = "<div style='text-align:center; padding:15px; background:#E0F2E9; border-radius:40px;'>Amazing work! Press Play Again to practice more safety tips.</div>";
             nextButton.style.display = "none";
-            roundNumSpan.innerText = `10 / 10`;
             scoreSpan.innerText = score;
-            feedbackMsgEl.innerHTML = "Amazing work! You are a scam spotter. Press Play Again for more practice.";
+            feedbackMsgEl.innerHTML = "You are a safety expert! Press Play Again to keep learning.";
         }
     }
     
     function resetGame() {
-        currentRound = 0;
+        currentQ = 0;
         score = 0;
         gameActive = true;
-        roundAnswered = false;
+        questionAnswered = false;
         
-        updateUIForCurrentRound();
+        updateUIForCurrent();
         nextButton.style.display = "none";
-        feedbackMsgEl.innerHTML = "Game reset! Read each message and choose the safest option.";
+        feedbackMsgEl.innerHTML = "Game reset. Read each question and pick the safest answer.";
         scoreSpan.innerText = "0";
-        roundNumSpan.innerText = `1 / ${scenarios.length}`;
-        const firstScenario = scenarios[0];
-        npcMessageEl.innerHTML = `"${firstScenario.npcLine}"`;
-        intentTextEl.innerHTML = "Choose an answer first. Then we will explain the hidden motive.";
     }
 
     function bindEvents() {
-        nextButton.onclick = goToNextRound;
+        nextButton.onclick = goToNext;
         resetBtn.onclick = resetGame;
     }
     
     bindEvents();
-    updateUIForCurrentRound();
+    updateUIForCurrent();
 </script>
 </body>
 </html>
